@@ -9,8 +9,8 @@ public class HelloMain {
 	public static void main(String[] args) {
 		String host = "idc.tainweb.com";
 		int port = 22222;  // default=22
-		String username = "kang";
-		String password = "!Q2w3e4r";
+		String username = "";
+		String password = "";
 		
 		Session session = null;
 		Channel channel = null;

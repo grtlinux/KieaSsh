@@ -17,6 +17,30 @@ import com.jcraft.jsch.Session;
  */
 public class KeicSftpClient {
 
+	public static void main(String[] args) throws Exception {
+		String host = "";
+		String user = "";
+		String pass = "";
+		
+		KeicSftpClient keicSftpClient = new KeicSftpClient(host, user, pass);
+		
+		String dir = "/home/kang/TEMP";
+		String path = "/Users/kang-air/FILES";
+		String file = "notepad.dmg";
+		keicSftpClient.upload(dir, path, file);
+		
+		dir = "/home/kang/TEMP";
+		path = "/Users/kang-air";
+		file = "notepad.dmg";
+		keicSftpClient.download(dir, path, file);
+		
+		keicSftpClient.disconnect();
+		
+		System.out.println(">>>>> KeicSftpClient OK!!!");
+	}
+	
+	//////////////////////////////////////////////////////////////////////
+	
 	private String host;
 	private int port = 22;
 	private String user;

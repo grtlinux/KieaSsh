@@ -7,8 +7,8 @@ import com.jcraft.jsch.Session;
 public class HelloMain {
 
 	public static void main(String[] args) {
-		String host = "idc.tainweb.com";
-		int port = 22222;  // default=22
+		String host = "";
+		int port = 22;
 		String username = "";
 		String password = "";
 		

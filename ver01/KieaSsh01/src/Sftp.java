@@ -17,60 +17,59 @@ import javax.swing.*;
 public class Sftp{
   public static void main(String[] arg){
 
-    try{
-      JSch jsch=new JSch();
+    try {
+      JSch jsch = new JSch();
 
-      String host=null;
-      if(arg.length>0){
-        host=arg[0];
-      }
-      else{
-        host=JOptionPane.showInputDialog("Enter username@hostname",
+      String host = null;
+      if (arg.length > 0) {
+        host = arg[0];
+      } else {
+        host = JOptionPane.showInputDialog("Enter username@hostname",
                                          System.getProperty("user.name")+
                                          "@localhost"); 
       }
-      String user=host.substring(0, host.indexOf('@'));
-      host=host.substring(host.indexOf('@')+1);
-      int port=22;
+      String user = host.substring(0, host.indexOf('@'));
+      host = host.substring(host.indexOf('@')+1);
+      int port = 22;
 
-      Session session=jsch.getSession(user, host, port);
+      Session session = jsch.getSession(user, host, port);
 
       // username and password will be given via UserInfo interface.
-      UserInfo ui=new MyUserInfo();
+      UserInfo ui = new MyUserInfo();
       session.setUserInfo(ui);
 
       session.connect();
 
-      Channel channel=session.openChannel("sftp");
+      Channel channel = session.openChannel("sftp");
       channel.connect();
       ChannelSftp c=(ChannelSftp)channel;
 
-      java.io.InputStream in=System.in;
-      java.io.PrintStream out=System.out;
+      java.io.InputStream in = System.in;
+      java.io.PrintStream out = System.out;
 
-      java.util.Vector cmds=new java.util.Vector();
-      byte[] buf=new byte[1024];
+      java.util.Vector<String> cmds = new java.util.Vector<>();
+      byte[] buf = new byte[1024];
       int i;
       String str;
-      int level=0;
+      int level = 0;
 
-      while(true){
+      while (true) {
         out.print("sftp> ");
-	cmds.removeAllElements();
-        i=in.read(buf, 0, 1024);
-	if(i<=0)break;
+        cmds.removeAllElements();
+        i = in.read(buf, 0, 1024);
+        if (i <= 0) break;
 
         i--;
-        if(i>0 && buf[i-1]==0x0d)i--;
-        //str=new String(buf, 0, i);
+        if (i > 0 && buf[i-1] == 0x0d) i--;
+        //str = new String(buf, 0, i);
         //System.out.println("|"+str+"|");
-	int s=0;
-	for(int ii=0; ii<i; ii++){
-          if(buf[ii]==' '){
-            if(ii-s>0){ cmds.addElement(new String(buf, s, ii-s)); }
-	    while(ii<i){if(buf[ii]!=' ')break; ii++;}
-	    s=ii;
-	  }
+        int s = 0;
+        for (int ii = 0; ii < i; ii++) {
+          if (buf[ii] == ' ') {
+            if (ii-s > 0) { cmds.addElement(new String(buf, s, ii-s)); }
+            while (ii < i) {if(buf[ii] != ' ') break; ii++;}
+            s=ii;
+        }
 	}
 	if(s<i){ cmds.addElement(new String(buf, s, i-s)); }
 	if(cmds.size()==0)continue;
@@ -174,7 +173,7 @@ public class Sftp{
 	  String path=".";
 	  if(cmds.size()==2) path=(String)cmds.elementAt(1);
 	  try{
-	    java.util.Vector vv=c.ls(path);
+	    java.util.Vector<?> vv = c.ls(path);
 	    if(vv!=null){
 	      for(int ii=0; ii<vv.size(); ii++){
 //		out.println(vv.elementAt(ii).toString());

@@ -64,3 +64,13 @@ Last login: Sun Sep 23 05:30:37 2018 from ssh-client
 < Date: Sun, 23 Sep 2018 09:40:40 GMT
 ....
 ```
+
+# Putty
+
+## Local
+
+![SSH-tunneling-Local](./SSH-tunneling-Local.webp)
+
+## Remote
+
+![SSH-tunneling-Remote](./SSH-tunneling-Remote.webp)

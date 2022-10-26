@@ -2,7 +2,7 @@
 
 # Local Port Forwarding
 
-[SSH Tunnel Local](./README_01.md)
+[SSH Tunnel Local](./SSH_Tunnel_Local_20221026.png)
 
 ```
 [root@ssh-server ~] docker ps --format '{{.Names}}\t{{.Image}}\t{{.Ports}}'
@@ -33,7 +33,7 @@ Last login: Sun Sep 23 05:01:06 2018
 
 # Remote Port Forwarding
 
-[SSH Tunnel Remote](./README_01.md)
+[SSH Tunnel Remote](./SSH_Tunnel_Remote_20221026.png)
 
 ```
 [root@ssh-server ~] ssh -R 8585:127.0.0.1:80 192.168.1.200

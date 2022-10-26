@@ -38,15 +38,15 @@ kang@ubuntu:~$
 ## print id_rsa(private key), id_rsa.pub(public key)
 ```
 kang@ubuntu:~$ cat .ssh/id_rsa
------BEGIN RSA PRIVATE KEY-----
-MIIEowIBAAKCAQEAysbtdLaT8F8bMSVER9iRUp41w+jDllGO2SynBc+CJj4/XOBc
-LRy1ssz0Lk3AWPZ07+tNDd2eaF2yVjhbu5Vg0oFIn0FPrP5+2c2UGAuVvqcx1pNB
-...
-3I7hPQKBgALmlN0xvsd1Ay4YzWlongWKvQDoRsOG/i4TvtIPvMz4Ya0pKQIVoXat
-ZpwF5GAk+iDj1Y0MLYgWu+dMHGrlOx7rYJn2163kfFiMONpkkzycD/H/RPZzyNk5
-JdZU0hSWuukvFflB9m6GWqVyJaMWhdVjzc6eoUd4Ekfx6jt2gJL4
------END RSA PRIVATE KEY-----
+  -----BEGIN RSA PRIVATE KEY-----
+  MIIEowIBAAKCAQEAysbtdLaT8F8bMSVER9iRUp41w+jDllGO2SynBc+CJj4/XOBc
+  LRy1ssz0Lk3AWPZ07+tNDd2eaF2yVjhbu5Vg0oFIn0FPrP5+2c2UGAuVvqcx1pNB
+  ...
+  3I7hPQKBgALmlN0xvsd1Ay4YzWlongWKvQDoRsOG/i4TvtIPvMz4Ya0pKQIVoXat
+  ZpwF5GAk+iDj1Y0MLYgWu+dMHGrlOx7rYJn2163kfFiMONpkkzycD/H/RPZzyNk5
+  JdZU0hSWuukvFflB9m6GWqVyJaMWhdVjzc6eoUd4Ekfx6jt2gJL4
+  -----END RSA PRIVATE KEY-----
 kang@ubuntu:~$ cat .ssh/id_rsa.pub
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKxu10tpP ... fAiZg06E1Xz/DTJoPdMJbqmWfqj kang@ubuntu
+  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKxu10tpP ... fAiZg06E1Xz/DTJoPdMJbqmWfqj kang@ubuntu
 kang@ubuntu:~$ 
 ```

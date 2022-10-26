@@ -1,6 +1,6 @@
 # Keygen
 
-## ssh-keygen -t rsa
+## ssh-keygen [ -t rsa | dsa | ecdsa | ecdsa-sk | ed25519 | ed25519-sk ]
 ```
 kang@ubuntu:~$ ssh-keygen -t rsa
   Generating public/private rsa key pair.

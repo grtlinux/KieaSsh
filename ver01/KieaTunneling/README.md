@@ -9,6 +9,7 @@
 vigilant_khorana        nginx   127.0.0.1:80->80/tcp
 ```
 
+SSH-CLIENT> ssh -L localhost:8585:127.0.0.1:80 user@192.168.1.201 -p [PORT]
 ```
 [root@ssh-client ~] ssh -L 8585:127.0.0.1:80 192.168.1.201
 root@192.168.1.201's password:
@@ -35,6 +36,7 @@ Last login: Sun Sep 23 05:01:06 2018
 
 ![SSH Tunnel Remote](./SSH_Tunnel_Remote_20221026.png)
 
+SSH-SERVER> ssh -R 192.168.1.200:8585:127.0.0.1:80 user@192.168.1.201 -p [PORT]
 ```
 [root@ssh-server ~] ssh -R 8585:127.0.0.1:80 192.168.1.200
 root@192.168.1.200's password:
